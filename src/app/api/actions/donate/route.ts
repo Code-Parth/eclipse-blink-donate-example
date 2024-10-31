@@ -20,13 +20,13 @@ export async function GET(request: Request) {
         icon: `${url.origin}/eclipse.png`,
         title: "Donate to Eclipse",
         description: "Support Eclipse by transferring Ethereum",
-        label: "Transfer 0.01 Ethereum",
+        label: "Transfer 0.1 Ethereum",
         links: {
             actions: [
                 {
                     type: "transaction",
-                    label: "Transfer 0.001 Ethereum",
-                    href: `${url.href}?amount=0.01`,
+                    label: "Transfer 0.1 Ethereum",
+                    href: `${url.href}?amount=0.1`,
                 },
             ],
         },
@@ -43,7 +43,7 @@ export async function POST(request: Request) {
 
     const url = new URL(request.url);
 
-    const amount = Number(url.searchParams.get("amount")) || 0.01;
+    const amount = Number(url.searchParams.get("amount")) || 0.1;
 
     let sender;
 
